@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: activity_to_do_app_development
   pool: 5
-  username: activity_to_do_app
+  username: sergethompson
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,13 +43,13 @@ test:
   encoding: unicode
   database: activity_to_do_app_test
   pool: 5
-  username: activity_to_do_app
+  username: sergethompson
   password:
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: activity_to_do_app_production
-  pool: 5
-  username: activity_to_do_app
-  password:
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: activity_to_do_app_production
+#   pool: 5
+#   username: sergethompson
+#   password:
