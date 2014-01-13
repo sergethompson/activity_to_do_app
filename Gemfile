@@ -26,6 +26,8 @@ gem 'rspec-rails'
 gem 'capybara'
 gem 'devise'
 
+gem 'geocoder'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
