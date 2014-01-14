@@ -4,7 +4,10 @@ ActivityToDoApp::Application.routes.draw do
 
   resources :activities #only: [:index, :new, :create, :show]
 
-  root :to => "home#index"
+
+  root :to => 'activities#new'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

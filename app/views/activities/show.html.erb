@@ -3,7 +3,6 @@ user: <%= @activity.activity %><br>
 address: <%= @activity.address %><br>
 lat: <%= @activity.latitude %><br>
 lon: <%= @activity.longitude %><br>
-place: <%= @activity.place %><br>
 
 
 email: <%= @email %><br>
@@ -22,7 +21,7 @@ ip_address search: <%= @activity.distance_to(@s[0].address) %><br>
 
 
 <ul>
-<% for location in @activity.nearbys(50) %>
+<% for location in @activity.nearbys(3000) %>
 <li><%= link_to location.activity, location %> (<%= location.distance %>)miles</li>
 
 <% end %>

@@ -32,8 +32,8 @@ class ActivitiesController < ApplicationController
 		@activity = Activity.find(params[:id])
 		@email = current_user.email
 		@user = User.find(current_user.id)
-		@ip_address = request.ip
-		@s = Geocoder.search("76.204.125.144")
+		@ip_address = request.ip == "127.0.0.1" ? nil : request.ip
+		@s = Geocoder.search @ip_address || "76.204.125.144"
 		binding.pry
 		# @user.ip_address = @ip_address
 		# @address = current_user.address
