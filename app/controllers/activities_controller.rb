@@ -20,6 +20,22 @@ class ActivitiesController < ApplicationController
 
 	def index
 		@activity = Activity.all
+		@ip_address = request.ip == "127.0.0.1" ? nil : request.ip
+		@s = Geocoder.search @ip_address || "76.204.125.144"
+
+####################### Organizing activities to with activity and distance from current location to activity location###############
+				activity_dist = []
+
+				activity_dist = @activity.map do |t| 
+					array = []
+					dist = t.distance_to(@s[0].address) || 30000
+					array = [t, dist]
+				end
+
+####################### Sorting activities to with activity and distance nearest to farthest###############
+				@sorted = activity_dist.sort {|a,b| a[1] <=> b[1]}
+
+
 		# @user = User.find(current_user.id)
 		# # binding.pry
 		# @ip_address = request.ip
@@ -34,7 +50,7 @@ class ActivitiesController < ApplicationController
 		@user = User.find(current_user.id)
 		@ip_address = request.ip == "127.0.0.1" ? nil : request.ip
 		@s = Geocoder.search @ip_address || "76.204.125.144"
-		binding.pry
+		
 		# @user.ip_address = @ip_address
 		# @address = current_user.address
 	end
