@@ -31,6 +31,7 @@ class ActivitiesController < ApplicationController
 		@activity = Activity.find(params[:id])
 		@email = current_user.email
 		@user = User.find(current_user.id)
+		binding.pry
 		@ip_address = request.ip
 		@user.ip_address = @ip_address
 		@address = current_user.address

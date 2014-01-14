@@ -5,13 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_sign_in_ip
   # attr_accessible :title, :body
 
   attr_accessible :ip_address, :latitude, :longitude, :address
 
+  # ip_address = current_sign_in_ip 
 
-  geocoded_by :ip_address,
+
+  geocoded_by :current_sign_in_ip,
   :latitude => :latitude, :longitude => :longitude
 	after_validation :geocode
 
