@@ -2,7 +2,7 @@ ActivityToDoApp::Application.routes.draw do
 
   devise_for :users
 
-  
+  resources :activities #only: [:index, :new, :create, :show]
 
   root :to => "home#index"
   # The priority is based upon order of creation:

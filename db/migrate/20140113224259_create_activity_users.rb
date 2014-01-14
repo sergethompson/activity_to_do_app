@@ -1,6 +1,6 @@
-class CreateActivityUserTables < ActiveRecord::Migration
+class CreateActivityUsers < ActiveRecord::Migration
   def change
-    create_table :activity_user_tables do |t|
+    create_table :activity_users do |t|
       t.integer :user_id
       t.integer :activity_id
 
