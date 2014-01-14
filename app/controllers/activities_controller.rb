@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-
+before_filter :authenticate_user!, except: [:index, :show]
 
 	def new
 		@activity = Activity.new
