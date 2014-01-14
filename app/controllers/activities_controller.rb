@@ -19,17 +19,18 @@ class ActivitiesController < ApplicationController
 
 	def index
 		@activity = Activity.all
-		@user = User.find(current_user.id)
-		binding.pry
-		@ip_address = request.ip
-		@user.ip_address = @ip_address
-		@address = current_user.address
+		# @user = User.find(current_user.id)
+		# # binding.pry
+		# @ip_address = request.ip
+		# @user.ip_address = @ip_address
+		# @address = current_user.address
 
 	end
 
 	def show
 		@activity = Activity.find(params[:id])
-		@user = User.find(current_user.id)
+		# @email = current_user.email
+		# @user = User.find(current_user.id)
 		# binding.pry
 		# @ip_address = request.ip
 		# @user.ip_address = @ip_address
