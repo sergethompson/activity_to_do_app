@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'devise'
+gem 'pry'
 
 gem 'geocoder'
 

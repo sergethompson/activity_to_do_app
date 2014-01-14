@@ -20,6 +20,7 @@ class ActivitiesController < ApplicationController
 	def index
 		@activity = Activity.all
 		@user = User.find(current_user.id)
+		binding.pry
 		@ip_address = request.ip
 		@user.ip_address = @ip_address
 		@address = current_user.address
@@ -28,9 +29,11 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@activity = Activity.find(params[:id])
-		@ip_address = request.ip
-		current_user.ip_address = @ip_address
-		@address = current_user.address
+		@user = User.find(current_user.id)
+		# binding.pry
+		# @ip_address = request.ip
+		# @user.ip_address = @ip_address
+		# @address = current_user.address
 	end
 
 	def edit
