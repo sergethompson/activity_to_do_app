@@ -29,7 +29,7 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@activity = Activity.find(params[:id])
-		# @email = current_user.email
+		@email = current_user.email
 		# @user = User.find(current_user.id)
 		# binding.pry
 		# @ip_address = request.ip
