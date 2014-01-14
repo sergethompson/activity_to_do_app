@@ -11,7 +11,7 @@ email: <%= @email %><br>
 ip_address: <%= @ip_address %><br>
 
 
-ip_address search: <%= Geocoder.search("76.204.125.144") %><br>
+ip_address search current location: <%= @s[0].address %><br>
 
 ip_address search: <%= @activity.distance_to(@s[0].address) %><br>
 
