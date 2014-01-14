@@ -6,10 +6,12 @@ class ActivitiesController < ApplicationController
 	end
 
 	def create
+		ip_address = request.ip
 		activity = Activity.create({activity: params[:activity][:activity],
 			description: params[:activity][:description],
-			place: params[:activity][:place],
-			time: params[:activity][:time]
+			address: params[:activity][:place],
+			time: params[:activity][:time],
+			ip_address: ip_address,
 			})
 		# Band.create(name: params[:band][:name])
 		# redirect_to activities_path
@@ -31,10 +33,9 @@ class ActivitiesController < ApplicationController
 		@activity = Activity.find(params[:id])
 		@email = current_user.email
 		@user = User.find(current_user.id)
-		binding.pry
 		@ip_address = request.ip
-		@user.ip_address = @ip_address
-		@address = current_user.address
+		# @user.ip_address = @ip_address
+		# @address = current_user.address
 	end
 
 	def edit
