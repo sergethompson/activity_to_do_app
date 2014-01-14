@@ -26,5 +26,13 @@ class User < ActiveRecord::Base
 	after_validation :reverse_geocode
 
 
+  def do(activity)
+    ActivityUser.create({
+      user_id: self.id,
+      activity_id: activity.id
+      })
+  end
+
+
 end
 

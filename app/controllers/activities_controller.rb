@@ -12,6 +12,12 @@ before_filter :authenticate_user!, except: [:index, :show]
 			address: params[:activity][:address],
 			time: params[:activity][:time]
 			})
+
+		###########To make table associations
+		user = User.find(current_user.id)
+		user.do(activity)
+
+
 		# Band.create(name: params[:band][:name])
 		# redirect_to activities_path
 		redirect_to activity_path(activity)
@@ -50,6 +56,9 @@ before_filter :authenticate_user!, except: [:index, :show]
 		@user = User.find(current_user.id)
 		@ip_address = request.ip == "127.0.0.1" ? nil : request.ip
 		@s = Geocoder.search @ip_address || "76.204.125.144"
+
+		
+		@test_joining = ActivityUser.find(current_user.id)
 		
 		# @user.ip_address = @ip_address
 		# @address = current_user.address
