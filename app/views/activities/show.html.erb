@@ -14,6 +14,8 @@ ip_address: <%= @ip_address %><br>
 
 ip_address search: <%= Geocoder.search("76.204.125.144") %><br>
 
+ip_address search: <%= @activity.distance_to(@s[0].address) %><br>
+
 
 
 <h3>Nearby Locations</h3>
@@ -21,7 +23,7 @@ ip_address search: <%= Geocoder.search("76.204.125.144") %><br>
 
 <ul>
 <% for location in @activity.nearbys(50) %>
-<li><%= link_to location.address, location %> (<%= location.distance %>)miles</li>
+<li><%= link_to location.activity, location %> (<%= location.distance %>)miles</li>
 
 <% end %>
 </ul>

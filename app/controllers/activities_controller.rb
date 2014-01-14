@@ -9,9 +9,8 @@ class ActivitiesController < ApplicationController
 		ip_address = request.ip
 		activity = Activity.create({activity: params[:activity][:activity],
 			description: params[:activity][:description],
-			address: params[:activity][:place],
-			time: params[:activity][:time],
-			ip_address: ip_address,
+			address: params[:activity][:address],
+			time: params[:activity][:time]
 			})
 		# Band.create(name: params[:band][:name])
 		# redirect_to activities_path
@@ -34,6 +33,8 @@ class ActivitiesController < ApplicationController
 		@email = current_user.email
 		@user = User.find(current_user.id)
 		@ip_address = request.ip
+		@s = Geocoder.search("76.204.125.144")
+		binding.pry
 		# @user.ip_address = @ip_address
 		# @address = current_user.address
 	end

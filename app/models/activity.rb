@@ -4,12 +4,9 @@ class Activity < ActiveRecord::Base
 
   attr_accessible :activity, :description, :place, :time, :activity_id, :address, :latitude, :longitude, :ip_address
 
-  geocoded_by :ip_address,
-  :latitude => :latitude, :longitude => :longitude
+  geocoded_by :address
 	after_validation :geocode
 
-	reverse_geocoded_by :latitude, :longitude,
-  :address => :address
-	after_validation :reverse_geocode
-
 end
+
+# need to know how to update an individual activerecord table item from controller
