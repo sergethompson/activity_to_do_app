@@ -3,9 +3,9 @@ ActivityToDoApp::Application.routes.draw do
   devise_for :users
 
   resources :activities #only: [:index, :new, :create, :show]
+  resources :activity_users
 
-
-  root :to => 'activities#new'
+  root :to => 'activities#index'
 
 
   # The priority is based upon order of creation:

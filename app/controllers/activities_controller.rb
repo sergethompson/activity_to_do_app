@@ -8,10 +8,10 @@ before_filter :authenticate_user!, except: [:index, :show]
 	def create
 		ip_address = request.ip
 
-				activity = Activity.create({activity: params[:activity][:activity] || "Run",
-				description: params[:activity][:description] || "Running",
-				address: params[:activity][:address] || "New York, New York",
-				time: params[:activity][:time] || "8am"
+				activity = Activity.create({activity: params[:activity][:activity],
+				description: params[:activity][:description],
+				address: params[:activity][:address],
+				time: params[:activity][:time]
 				})
 
 				###########To make table associations
@@ -43,26 +43,23 @@ before_filter :authenticate_user!, except: [:index, :show]
 				@sorted = activity_dist.sort {|a,b| a[1] <=> b[1]}
 
 
-		# @user = User.find(current_user.id)
-		# # binding.pry
-		# @ip_address = request.ip
-		# @user.ip_address = @ip_address
-		# @address = current_user.address
+	
 
 	end
 
 	def show
 		@activity = Activity.find(params[:id])
-		@email = current_user.email
-		@user = User.find(current_user.id)
+
 		@ip_address = request.ip == "127.0.0.1" ? nil : request.ip
 		@s = Geocoder.search @ip_address || "76.204.125.144"
+
+		@user = User.find(current_user.id)
+		
 
 
 		@test_joining = ActivityUser.find(current_user.id)
 		
-		# @user.ip_address = @ip_address
-		# @address = current_user.address
+		
 	end
 
 	def edit

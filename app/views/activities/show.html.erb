@@ -4,8 +4,7 @@ address: <%= @activity.address %><br>
 lat: <%= @activity.latitude %><br>
 lon: <%= @activity.longitude %><br>
 
-
-email: <%= @email %><br>
+author:   <%= @activity.users[0].email %><br>
 
 
 ip_address: <%= @ip_address %><br>
@@ -15,11 +14,25 @@ Activity id and User id == Current id: <%= @test_joining.activity_id %> and <%= 
 
 ip_address search current location: <%= @s[0].address %><br>
 
-ip_address search: <%= @activity.distance_to(@s[0].address) %><br>
+ip_address search distance: <%= @activity.distance_to(@s[0].address) %><br>
+
+
+<h3>New Group</h3>
+<%= @activity.users %><br>
+
+
+With this submit I want to add a user to an activity
+
+<form action="/activity_users" method="post">
+	<input type="hidden" name="activity" value="<%=@activity.id%>">
+	<input type="hidden" name="user" value="<%=@user.id%>">
+	<button id="submit">Join Activity</button>
+
+</form>
 
 
 
-<h3>Nearby Locations</h3>
+<h3>Nearby Activities</h3>
 
 
 <ul>
@@ -28,6 +41,7 @@ ip_address search: <%= @activity.distance_to(@s[0].address) %><br>
 
 <% end %>
 </ul>
+
 
 
 
