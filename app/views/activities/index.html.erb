@@ -5,6 +5,7 @@
 <table class="table table-striped table-hover">
 <tr>
 	<td><h3>Activity</h3></td>
+	<td><h3>Leader</h3></td>
 	<td><h3>Time</h3></td>
 	<td><h3>Location</h3></td>
 	<td><h3>Description</h3></td>
@@ -15,6 +16,7 @@
 <% @sorted.each do |to_do| %>
 <tr>
 	<td><%= to_do[0].activity %></td>
+	<td><%= to_do[0].users[0].email %></td>
 	<td><%= to_do[0].time %></td>
 	<td><%= to_do[0].address %></td>
 	<td><%= to_do[0].description %></td>

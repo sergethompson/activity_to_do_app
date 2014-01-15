@@ -1,0 +1,31 @@
+params["activity"].values.each do |t|
+  i = 0
+  if t == ""  
+     i += 1    
+   end  
+   i
+ end 
+
+ ############
+binding.pry
+		params["activity"].values.each do |t|
+				if t == ""
+					redirect_to new_activity_path
+				else
+				activity = Activity.create({activity: params[:activity][:activity] || "Run",
+				description: params[:activity][:description] || "Running",
+				address: params[:activity][:address] || "New York, New York",
+				time: params[:activity][:time] || "8am"
+				})
+				
+
+				###########To make table associations
+				user = User.find(current_user.id)
+				user.do(activity)
+
+
+				# Band.create(name: params[:band][:name])
+				# redirect_to activities_path
+				redirect_to activity_path(activity)
+				end
+		end
