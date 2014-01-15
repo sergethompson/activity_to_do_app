@@ -8,7 +8,6 @@ before_filter :authenticate_user!, except: [:index, :show]
 		activity = Activity.find params[:activity]
 
 		user.do(activity)
-		binding.pry
 
 		redirect_to activity_path(activity)
 	

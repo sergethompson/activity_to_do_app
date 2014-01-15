@@ -5,6 +5,11 @@ ActivityToDoApp::Application.routes.draw do
   resources :activities #only: [:index, :new, :create, :show]
   resources :activity_users
 
+  get '/pops/run', to: 'pops#run'
+  get '/pops/bike', to: 'pops#bike'
+  get '/pops/swimming', to: 'pops#swimming'
+  get '/pops/racquetball', to: 'pops#racquetball'
+
   root :to => 'activities#index'
 
 
@@ -33,6 +38,7 @@ ActivityToDoApp::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+
 
   # Sample resource route with sub-resources:
   #   resources :products do

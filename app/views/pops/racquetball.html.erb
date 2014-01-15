@@ -1,0 +1,32 @@
+
+<h1>You made it to the Racquetball Page, ya</h1>
+<%= link_to "Back", :back %>
+
+
+
+<table class="table table-striped table-hover">
+<tr>
+	<td><h3>Activity</h3></td>
+	<td><h3>Leader</h3></td>
+	<td><h3>Time</h3></td>
+	<td><h3>Location</h3></td>
+	<td><h3>Description</h3></td>
+	<td><h3>Distance</h3></td>
+	<td><h3>Show</h3></td>
+</tr>
+
+<% @sorted.each do |to_do| %>
+	<% if to_do[0].activity == "Racquetball" %>
+		<tr>
+			<td><%= to_do[0].activity %></td>
+			<td><%= to_do[0].users[0].email %></td>
+			<td><%= to_do[0].time %></td>
+			<td><%= to_do[0].address %></td>
+			<td><%= to_do[0].description %></td>
+			<td><%= to_do[1].round(2) %></td>
+			<td><%= link_to to_do[0].activity, to_do[0] %></td>
+		</tr>
+	<% end %>
+
+<% end %>
+</table>
