@@ -7,4 +7,5 @@ class CreateActivityUsers < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
 end
