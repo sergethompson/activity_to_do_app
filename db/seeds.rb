@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-10.times do
+5.times do
 	email = Faker::Internet.email
 
 	User.create!(
@@ -17,7 +17,7 @@
 end
 
 
-20.times do
+10.times do
 	activity = %w(Run Skate Bike Ice-Skating Yoga Spin Concert Walk Dance Outdoor-Movie).sample
 	description = %w(Doing-it Watching-it Being-it Spectator).sample
 	address = ["Manhattan, New York", "Queens, New York", "Brooklyn, New York", "Flatiron District", "Greenwich, CT", "Bronx, New York", "Staten Island, NY", "San Jose, CA", "Nashville, TN", "Stowe, VT"].sample
