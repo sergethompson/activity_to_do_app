@@ -8,11 +8,6 @@ lon: <%= @activity.longitude %><br>
 author:   <%= @activity.users[0].email %><br>
 
 
-ip_address: <%= @ip_address %><br>
-
-Activity id and User id == Current id: <%= @test_joining.activity_id %> and <%= @test_joining.user_id %>==<%= current_user.id %><br>
-
-
 ip_address search current location: <%= @s[0].address %><br>
 
 ip_address search distance: <%= @activity.distance_to(@s[0].address) %><br>
@@ -23,8 +18,7 @@ ip_address search distance: <%= @activity.distance_to(@s[0].address) %><br>
 	<%= x.email %><br>
 <% end %>
 
-
-
+<% if current_user %>
 <form action="/activity_users" method="post">
 	<input type="hidden" name="activity" value="<%=@activity.id%>">
 	<input type="hidden" name="user" value="<%=@user.id%>">
@@ -33,6 +27,11 @@ ip_address search distance: <%= @activity.distance_to(@s[0].address) %><br>
                             type="hidden" 
                             value="<%= form_authenticity_token %>" />
 </form>
+<% else %>
+	<%= link_to "Sign in to join", new_user_session_path, {:class => "btn btn-primary"} %>
+<% end %>
+
+
 
 
 

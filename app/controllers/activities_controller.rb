@@ -51,12 +51,13 @@ before_filter :authenticate_user!, except: [:index, :show]
 
 		@ip_address = request.ip == "127.0.0.1" ? nil : request.ip
 		@s = Geocoder.search @ip_address || "76.204.125.144"
-
+		if current_user
 		@user = User.find(current_user.id)
+		end
 		
 
 
-		@test_joining = ActivityUser.find(current_user.id)
+		#@test_joining = ActivityUser.find(current_user.id)
 
 
 		
