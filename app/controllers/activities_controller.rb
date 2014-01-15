@@ -58,6 +58,8 @@ before_filter :authenticate_user!, except: [:index, :show]
 
 
 		@test_joining = ActivityUser.find(current_user.id)
+
+		binding.pry
 		
 		
 	end

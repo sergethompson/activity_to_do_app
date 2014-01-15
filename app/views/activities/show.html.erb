@@ -19,11 +19,11 @@ ip_address search distance: <%= @activity.distance_to(@s[0].address) %><br>
 
 
 <h3>New Group</h3>
-<%= @activity.users %><br>
-array.each { |x| puts x }
+<% @activity.users.each do |x| %>
+	<%= x.email %><br>
+<% end %>
 
 
-With this submit I want to add a user to an activity
 
 <form action="/activity_users" method="post">
 	<input type="hidden" name="activity" value="<%=@activity.id%>">
@@ -32,7 +32,6 @@ With this submit I want to add a user to an activity
 	<input name="authenticity_token" 
                             type="hidden" 
                             value="<%= form_authenticity_token %>" />
-
 </form>
 
 
