@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-2.times do
+10.times do
 	email = Faker::Internet.email
 
 	User.create!(
