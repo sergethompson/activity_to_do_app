@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-5.times do
+1.times do
 	email = Faker::Internet.email
 
 	User.create!(
@@ -17,12 +17,16 @@
 end
 
 
-10.times do
+2.times do
 	activity = %w(Run Bike Swimming Racquetball).sample
 	description = "Will be a superfun time!"
 	address = ["Manhattan, New York", "Queens, New York", "Brooklyn, New York", "Flatiron District", "Bronx, New York", "Staten Island, NY"].sample
-	time = %w(6am 7am 8am 9am 4pm 5pm 6pm 7pm 8pm).sample
 	user = User.all.sample
+
+	now = Time.now
+	a_day_ahead = now + 60 * 60 * 24
+	time = rand(now..a_day_ahead)
+
 
 	activity = Activity.create({activity: activity,
 				description: description,
