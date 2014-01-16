@@ -11,3 +11,29 @@
  *= require_self
  *= require_tree .
  */
+
+
+ .bike
+{
+background-image:url('thumbs_warren-b-800.jpg');
+height: 27em;
+}
+
+ .run
+{
+background-image:url('running-360x360.jpg');
+height: 27em;
+}
+
+ .swim
+{
+background-image:url('michael-phelps_0.jpg');
+height: 27em;
+}
+
+ .racquetball
+{
+background-image:url('CRC_110607_sm066_filtered.jpg');
+height: 27em;
+}
+

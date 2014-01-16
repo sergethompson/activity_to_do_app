@@ -4,8 +4,14 @@ class Activity < ActiveRecord::Base
 
   attr_accessible :activity, :description, :place, :time, :activity_id, :address, :latitude, :longitude, :ip_address
 
+
+
   geocoded_by :address
-	after_validation :geocode
+	after_validation :geocode,
+  :if => lambda{ |obj| obj.address_changed? }
+
+ #  geocoded_by :address
+	# after_validation :geocode
 
 end
 
