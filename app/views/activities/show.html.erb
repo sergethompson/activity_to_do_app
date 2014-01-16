@@ -1,16 +1,26 @@
 
-user: <%= @activity.activity %><br>
+<h1><%= @activity.activity %></h1><br>
 
-address: <%= @activity.address %><br>
+
+<div class="row col-md-6 col-md-*">
+	<h3>Address:<small> <%= @activity.address %></small></h3><br>
+	<h3>Author:<small> <%= @activity.users[0].email %></small></h3><br>
+</div>
+
+<div class="row col-md-6 col-md-*">
+	<h3>Current Location:<small> <%= @s[0].address %></small></h3><br>
+	<h3>Distance to:<small> <%= @activity.distance_to(@s[0].address) %></small></h3><br>
+</div>
+
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @activity.address %>&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:A%7C<%= @activity.latitude %>,<%= @activity.longitude %>&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&sensor=false" alt=""><br>
+
+
+
+
 lat: <%= @activity.latitude %><br>
 lon: <%= @activity.longitude %><br>
-
-author:   <%= @activity.users[0].email %><br>
-
-
-ip_address search current location: <%= @s[0].address %><br>
-
-ip_address search distance: <%= @activity.distance_to(@s[0].address) %><br>
 
 
 <h3>New Group</h3>

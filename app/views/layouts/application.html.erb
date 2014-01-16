@@ -7,22 +7,24 @@
   <%= csrf_meta_tags %>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
+
 <body>
 
-  
-
-    <div class="container">
 
 
-	<% if user_signed_in? %>
-	<p>Welcome, <%= current_user.email %></p>
-		<%= button_to "logout", destroy_user_session_path, :method => :delete %>
 
-	<% else %>
-		<%= link_to "sign-in", new_user_session_path %>
-		<%= link_to "sign-up", new_user_registration_path %>
 
-	<% end %>
+
+<ul class="nav nav-pills pull-right">
+  <% if user_signed_in? %>
+    <li><%= button_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+  <% else %>
+    <li><%= link_to "Sign in", new_user_session_path %></li>
+    <li><%= link_to "Sign up", new_user_registration_path %></li>
+  <% end %>
+</ul>
+
+
 
 
 
@@ -35,7 +37,8 @@
 
 
 	<%= yield %>
-</div>
+
 
 </body>
+
 </html>

@@ -13,6 +13,11 @@ ActivityToDoApp::Application.routes.draw do
   root :to => 'activities#index'
 
 
+  ####
+
+  get '/pops/run/sort_by/:sort_by' => 'pops#run', as: 'sort_by'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

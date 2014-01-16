@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+ .sign_in
+{
+background-image:url('89918.jpg');
+height: 1000px;
+background-repeat:no-repeat;
+}
 
  .bike
 {
