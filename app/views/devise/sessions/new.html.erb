@@ -1,14 +1,16 @@
 <h2>Sign in</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="input-group margin-bottom-sm">
-  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-  <%= f.email_field :email, placeholder: "Email address", :autofocus => true, class: "form-control" %>
-	</div>
+  <div style="width:20em;">
+    <div class="input-group margin-bottom-sm">
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+    <%= f.email_field :email, placeholder: "Email address", :autofocus => true, class: "form-control" %>
+  	</div>
 
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-  <%= f.password_field :password, placeholder: "Password", class: "form-control" %></div>
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+    <%= f.password_field :password, placeholder: "Password", class: "form-control" %></div>
+  </div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
