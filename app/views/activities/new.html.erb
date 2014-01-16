@@ -1,8 +1,23 @@
+<div class="container">
+
+<div class="jumbotron new_activ">
+  <br>
+  <br>
+  <br>
+<h1>Make a new activity!</h1>
+    <p class="lead">
+      Give us something new to do.
+    </p>
+
 <%= form_for @activity  do |f| %>
-	<%= f.label :name, "Activity:" %>
+<div style="width:20em;">
 	<%= f.text_field :activity, placeholder: "Activity", class: "form-control" %>
 	<%= f.text_field :description, placeholder: "Description", class: "form-control" %>
 	<%= f.text_field :address, placeholder: "Address", class: "form-control" %>
 	<%= f.text_field :time, placeholder: "Time", class: "form-control" %>
 	<%= f.submit nil, class:"btn btn-primary", id:"submit" %>
+</div>
 <% end %>
+
+</div>
+</div>

@@ -1,7 +1,8 @@
-
+<div class="show">
+  <div class="container">
 <h1><%= @activity.activity %></h1><br>
 
-
+ <div class="container">
 <div class="row col-md-6 col-md-*">
 	<h3>Address:<small> <%= @activity.address %></small></h3><br>
 	<h3>Author:<small> <%= @activity.users[0].email %></small></h3><br>
@@ -9,23 +10,18 @@
 
 <div class="row col-md-6 col-md-*">
 	<h3>Current Location:<small> <%= @s[0].address %></small></h3><br>
-	<h3>Distance to:<small> <%= @activity.distance_to(@s[0].address) %></small></h3><br>
+	<h3>Distance to:<small> <%= @activity.distance_to(@s[0].address).to_f.round(2) %></small></h3><br>
 </div>
-
-<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @activity.address %>&zoom=13&size=600x300&maptype=roadmap
-&markers=color:blue%7Clabel:A%7C<%= @activity.latitude %>,<%= @activity.longitude %>&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&sensor=false" alt=""><br>
+</div><br>
 
 
 
+ <div class="container">
+<div class="row col-md-6 col-md-*">
 
-lat: <%= @activity.latitude %><br>
-lon: <%= @activity.longitude %><br>
-
-
-<h3>New Group</h3>
+<h3>Going to:</h3>
 <% @activity.users.each do |x| %>
-	<%= x.email %><br>
+	<h5><%= x.email %></h5><br>
 <% end %>
 
 <% if current_user %>
@@ -40,34 +36,36 @@ lon: <%= @activity.longitude %><br>
 <% else %>
 	<%= link_to "Sign in to join", new_user_session_path, {:class => "btn btn-primary"} %>
 <% end %>
+</div>
 
 
 
-
-
+<div class="row col-md-6 col-md-*">
 <h3>Nearby Activities</h3>
-
 
 <ul>
 <% for location in @activity.nearbys(3000) %>
-<li><%= link_to location.activity, location %> (<%= location.distance %>)miles</li>
+<li><%= link_to location.activity, location %> (<%= location.distance.to_f.round(2) %>)miles</li>
 
 <% end %>
 </ul>
+</div>
+</div><br>
 
-<div class="btn-group open">
-  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
-  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-    <span class="fa fa-caret-down"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
-    <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
-    <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
-    <li class="divider"></li>
-    <li><a href="#"><i class="i"></i> Make admin</a></li>
-  </ul>
+
+
+<img class="img-responsive img-rounded centered" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @activity.address %>&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:A%7C<%= @activity.latitude %>,<%= @activity.longitude %>&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&sensor=false" alt=""><br>
+
+
+
+
+lat: <%= @activity.latitude %><br>
+lon: <%= @activity.longitude %><br>
 </div>
 
+</div>
 
 
 

@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -14,7 +14,9 @@
 
 
 
-
+<ul class="nav nav-pills pull-left">
+    <li><h1 class="font_head">Active Now </h1></li>
+</ul>
 <ul class="nav nav-pills pull-right">
   <% if user_signed_in? %>
     <li><%= button_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-link" %></li>
@@ -30,9 +32,6 @@
 
 	<p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-
-
 
 
 

@@ -19,27 +19,52 @@ height: 1000px;
 background-repeat:no-repeat;
 }
 
+.font_head
+{
+	margin-top: -2px;
+	margin-left: 5px;
+	font-family: 'Monoton', cursive;
+}
+
+ .show
+{
+background-image:url('background2.jpg');
+height: 1000px;
+background-repeat:no-repeat;
+}
+
+ .new_activ
+{
+background-image:url('surf.jpg');
+background-repeat:no-repeat;
+}
+
  .bike
 {
 background-image:url('thumbs_warren-b-800.jpg');
+max-width: 100%;
 height: 27em;
+
 }
 
  .run
 {
 background-image:url('running-360x360.jpg');
+max-width: 100%;
 height: 27em;
 }
 
  .swim
 {
 background-image:url('michael-phelps_0.jpg');
+max-width: 100%;
 height: 27em;
 }
 
  .racquetball
 {
 background-image:url('CRC_110607_sm066_filtered.jpg');
+max-width: 100%;
 height: 27em;
 }
 
