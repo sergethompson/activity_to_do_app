@@ -37,6 +37,8 @@ before_filter :authenticate_user!, except: [:index, :show, :run]
 
 ####################### Sorting activities to with activity and distance nearest to farthest###############
 				@sorted = activity_dist.sort {|a,b| a[1] <=> b[1]}
+
+
 	end
 
 	def show
@@ -47,6 +49,7 @@ before_filter :authenticate_user!, except: [:index, :show, :run]
 		if current_user
 			@user = User.find(current_user.id)
 		end
+
 	end
 
 
