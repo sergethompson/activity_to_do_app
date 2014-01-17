@@ -20,7 +20,7 @@
 		<tr>
 			<td><%= to_do[0].activity %></td>
 			<td><%= to_do[0].users[0].email %></td>
-			<td><%= to_do[0].time %></td>
+			<td><%= Time.at(to_do[0].time.to_f).ctime %></td>
 			<td><%= to_do[0].address %></td>
 			<td><%= to_do[0].description %></td>
 			<td><%= to_do[1].round(2) %></td>
