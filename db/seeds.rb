@@ -25,7 +25,7 @@ end
 
 	now = Time.now
 	a_day_ahead = now + 60 * 60 * 24
-	time = rand(now..a_day_ahead)
+	time = rand(now..a_day_ahead).to_f
 
 
 	activity = Activity.create({activity: activity,

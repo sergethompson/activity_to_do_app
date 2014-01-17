@@ -11,11 +11,12 @@
 
 <%= form_for @activity  do |f| %>
 <div style="width:20em;">
+	<%= f.label :name, "Activity:" %>
 	<%= f.text_field :activity, placeholder: "Activity", class: "form-control" %>
 	<%= f.text_field :description, placeholder: "Description", class: "form-control" %>
 	<%= f.text_field :address, placeholder: "Address", class: "form-control" %>
 	<%= f.text_field :time, placeholder: "Time", class: "form-control" %>
-	<%= f.submit nil, class:"btn btn-primary", id:"submit" %>
+	<%= f.submit nil, id:"submit", class:"btn btn-primary" %>
 </div>
 <% end %>
 

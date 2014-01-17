@@ -2,7 +2,7 @@
 <div class="container">
 
 
-<h1>You made it to INDEX activities, ya</h1>
+<h1>Checkout what is going on now.</h1>
 
 <%= link_to "", pops_bike_path, {:class => "img-responsive row col-md-6 img-rounded col-md-* bike"} %>
 <%= link_to "", pops_run_path, {:class => "img-responsive row col-md-6 img-rounded col-md-* run"} %>
@@ -28,7 +28,7 @@
 <tr>
 	<td><%= to_do[0].activity %></td>
 	<td><%= to_do[0].users[0].email %></td>
-	<td><%= to_do[0].time %></td>
+	<td><%= Time.at(to_do[0].time.to_f).ctime %></td>
 	<td><%= to_do[0].address %></td>
 	<td><%= to_do[0].description %></td>
 	<td><%= to_do[1].round(2) %></td>
