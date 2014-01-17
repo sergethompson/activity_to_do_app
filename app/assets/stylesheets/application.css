@@ -12,6 +12,11 @@
  *= require_tree .
  */
 
+ .tagging
+ {
+ 	text-decoration:none;
+ }
+
 .colorful
 {
 background-image:url('Light-Blue-Tumblr-Backgrounds-2013.jpg');
