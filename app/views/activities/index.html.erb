@@ -3,14 +3,16 @@
 
 
 <h1>Checkout what is going on now.</h1>
+<div class="container">
+	<%= link_to "Create Activity", new_activity_path, {:class => "btn btn-warning centered"} %>
+</div><br>
 
 <%= link_to "", pops_bike_path, {:class => "img-responsive row col-md-6 img-rounded col-md-* bike"} %>
 <%= link_to "", pops_run_path, {:class => "img-responsive row col-md-6 img-rounded col-md-* run"} %>
 <%= link_to "", pops_swimming_path, {:class => "img-responsive row col-md-6 img-rounded col-md-* swim"} %>
 <%= link_to "", pops_racquetball_path, {:class => "img-responsive row col-md-6 img-rounded  col-md-* racquetball"} %>
-<div class="container">
-	<%= link_to "New Activity", new_activity_path, {:class => "btn btn-warning pull-right"} %>
-</div>
+<br>
+
 
 <div class="table-responsive">
 <table class="table table-striped table-hover">

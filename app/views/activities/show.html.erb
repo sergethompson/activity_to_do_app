@@ -17,26 +17,45 @@
 
 
  <div class="container">
-<div class="row col-md-6 col-md-*">
 
-<h3>Going to:</h3>
+
+
+
+<div class="row col-md-6 col-md-*">
+<img class="img-responsive img-rounded centered" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @activity.address %>&zoom=13&size=600x300&maptype=roadmap
+&markers=color:red%7Clabel:A%7C<%= @activity.latitude %>,<%= @activity.longitude %>&markers=color:green%7Clabel:C%7C<%= @s[0].latitude %>,<%= @s[0].longitude %>&sensor=false" alt=""><br>
+
+
+</div>
+
+<div class="row col-md-6 col-md-* pull-right">
+
+<h3>Active Group:</h3>
 <% @activity.users.each do |x| %>
-	<h5><%= x.email %></h5><br>
+  <h6><%= x.email %></h6><br>
 <% end %>
 
 <% if current_user %>
 <form action="/activity_users" method="post">
-	<input type="hidden" name="activity" value="<%=@activity.id%>">
-	<input type="hidden" name="user" value="<%=@user.id%>">
-	<button class="btn btn-primary" id="submit">Join Activity</button>
-	<input name="authenticity_token" 
+  <input type="hidden" name="activity" value="<%=@activity.id%>">
+  <input type="hidden" name="user" value="<%=@user.id%>">
+  <button class="btn btn-primary" id="submit">Join Activity</button>
+  <input name="authenticity_token" 
                             type="hidden" 
                             value="<%= form_authenticity_token %>" />
 </form>
 <% else %>
-	<%= link_to "Sign in to join", new_user_session_path, {:class => "btn btn-primary"} %>
+  <%= link_to "Sign in to join", new_user_session_path, {:class => "btn btn-primary"} %>
 <% end %>
 </div>
+
+
+</div><br>
+
+
+
+
+
 
 
 
@@ -50,19 +69,6 @@
 <% end %>
 </ul>
 </div>
-</div><br>
-
-
-
-<img class="img-responsive img-rounded centered" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @activity.address %>&zoom=13&size=600x300&maptype=roadmap
-&markers=color:blue%7Clabel:A%7C<%= @activity.latitude %>,<%= @activity.longitude %>&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&sensor=false" alt=""><br>
-
-
-
-
-lat: <%= @activity.latitude %><br>
-lon: <%= @activity.longitude %><br>
 </div>
 
 </div>

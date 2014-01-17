@@ -18,7 +18,7 @@ before_filter :authenticate_user!, except: [:index, :show, :run]
 				user = User.find(current_user.id)
 				user.do(activity)
 
-				redirect_to activitys_path
+				redirect_to activities_path
 	end
 
 	def index

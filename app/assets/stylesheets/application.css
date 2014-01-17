@@ -12,6 +12,13 @@
  *= require_tree .
  */
 
+.colorful
+{
+background-image:url('Light-Blue-Tumblr-Backgrounds-2013.jpg');
+height: 1000px;
+background-repeat:no-repeat;
+}
+
  .sign_in
 {
 background-image:url('89918.jpg');
