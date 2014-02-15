@@ -17,7 +17,7 @@ before_filter :authenticate_user!, except: [:index, :show, :run]
 				###########To make table associations
 				user = User.find(current_user.id)
 				user.do(activity)
-				UserMailer.welcome_user(user).deliver()
+				# UserMailer.welcome_user(user).deliver()
 
 				redirect_to activities_path
 	end
