@@ -64,4 +64,22 @@ ActivityToDoApp::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+#If you want to see delivery errors
+config.action_mailer.raise_delivery_errors = true
+
+config.action_mailer.default_url_options = { :host => 'activity-to-do-app.herokuapp.com'}
+
+#What email protical will you use?
+config.action_mailer.delivery_method = :smtp
+
+config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "activity-to-do-app.herokuapp.com",
+    :user_name => ENV['MAILGUN_USERNAME'],
+    :password => ENV['MAILGUN_PASSWORD']
+}
+
 end

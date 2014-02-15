@@ -19,16 +19,21 @@
 
 .colorful
 {
-background-image:url('Light-Blue-Tumblr-Backgrounds-2013.jpg');
-height: 1000px;
-background-repeat:no-repeat;
+  background: url('Light-Blue-Tumblr-Backgrounds-2013.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
  .sign_in
 {
-background-image:url('89918.jpg');
-height: 1000px;
-background-repeat:no-repeat;
+	height: 100em;
+  background: url('89918.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .font_head

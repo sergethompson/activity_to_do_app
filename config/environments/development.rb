@@ -34,4 +34,23 @@ ActivityToDoApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+
+#If you want to see delivery errors
+config.action_mailer.raise_delivery_errors = true
+
+config.action_mailer.default_url_options = { :host => 'localhost:3000'}
+
+#What email protical will you use?
+config.action_mailer.delivery_method = :smtp
+
+config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "activity-to-do-app.herokuapp.com",
+    :user_name => ENV['MAILGUN_USERNAME'],
+    :password => ENV['MAILGUN_PASSWORD']
+}
+
 end
